@@ -95,8 +95,8 @@
         <v-row no-gutters> 
           <v-col cols="12" sm="2" class="text-start">
         <v-dialog max-width="428">
-          <template v-slot:activator="{ on, attrs }">
-            <v-card max-width="170" class="cards" v-bind="attrs" v-on="on">
+          <template v-slot:activator="{ on, guru }">
+            <v-card max-width="170" class="cards" v-bind="guru" v-on="on">
               <v-avatar color="#E6696A" class="ma-3 cards-avatar">
               <img src="../assets/budi.png" alt="Budi">
               </v-avatar>
@@ -115,8 +115,8 @@
             ></v-rating>
             <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
             </v-card>
-              </template>
-              <template v-slot:default="dialog">
+          </template>
+              <template v-slot:default="guru">
                   <v-card class="bg"> 
                     <v-card-text style="padding-bottom:0px;">
                   <v-container> 
@@ -175,12 +175,13 @@
                       </v-col>
                     </v-row>
                   </v-container>
-                </v-card-text>
+                </v-card-text> 
                 <v-card-actions class="pb-8 px-5">
-                  <v-btn
+                  <v-btn v-bind="payment" v-on="on"
                     color="#FDC356" depressed rounded dark block
-                    @click="dialog.value = false"
-                    href="payment.html"
+                    @click="guru.value = false"
+                    href="#/payment"
+                    
                   >
                     Request
                   </v-btn>
@@ -188,6 +189,9 @@
             </v-card>
           </template>
         </v-dialog>
+
+        
+
           </v-col>
           <v-col cols="12" sm="2" class="text-start">
             <v-card max-width="170" class="cards">
@@ -314,17 +318,6 @@ export default {
         harga:['dibawah 50.000','50.000 - 100.000','100.000 - 300.000','diatas 300.000'],
         rating:['1', '2', '3', '4', '5'],
         availability:['Setiap Hari','2 Hari Sekali','1 Minggu Sekali'],
-
-        show1: false,
-        show2: true,
-        show3: false,
-        show4: false,
-        password: 'Password',
-        rules: {
-          required: value => !!value || 'Required.',
-          min: v => v.length >= 8 || 'Min 8 characters',
-          emailMatch: () => (`The email and password you entered don't match`),
-        },
 
         dates: ['2021-09-11', '2021-09-12','2021-09-13','2021-09-14','2021-09-15'],
         menu: false,
