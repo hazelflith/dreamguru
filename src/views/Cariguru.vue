@@ -118,7 +118,7 @@
               </template>
               <template v-slot:default="dialog">
                   <v-card class="bg"> 
-                    <v-card-text>
+                    <v-card-text style="padding-bottom:0px;">
                   <v-container> 
                     <v-row>
                       <v-col cols="12" sm="6" class="text-end" no-gutters style="padding-right:0px;">
@@ -154,9 +154,29 @@
                         <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est nibh in pulvinar sit ornare et in eget. Consequat mi vitae amet aliquam mauris eu. </p>
                       </v-col>
                     </v-row>
+                    <v-row>
+                      <v-date-picker
+                        v-model="dates"
+                        multiple
+                        full-width
+                        color="#FFC555"
+                        style="padding:0px;"
+                      ></v-date-picker>
+                      <v-time-picker
+                        format="ampm"
+                        full-width
+                        color="#FFC555"
+                      ></v-time-picker>
+                      <v-col cols="12" sm="6" class="text-start" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
+                        <h6><b>Total Biaya</b></h6>
+                      </v-col>
+                      <v-col cols="12" sm="6" class="text-end" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
+                        <h6><b>Rp. 1.750.000</b></h6>
+                      </v-col>
+                    </v-row>
                   </v-container>
                 </v-card-text>
-                <v-card-actions class="px-8">
+                <v-card-actions class="pb-8 px-5">
                   <v-btn
                     color="#FDC356" depressed rounded dark block
                     @click="dialog.value = false"
@@ -305,6 +325,9 @@ export default {
           min: v => v.length >= 8 || 'Min 8 characters',
           emailMatch: () => (`The email and password you entered don't match`),
         },
+
+        dates: ['2021-09-11', '2021-09-12','2021-09-13','2021-09-14','2021-09-15'],
+        menu: false,
         components: {
             
         }
