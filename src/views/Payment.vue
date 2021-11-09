@@ -41,6 +41,74 @@
       <v-container>
         <v-row>
           <h1 class="text-start hero-1">Payment Options</h1>
+          <v-col cols="12" sm="6">
+                <h4 class="text-start"> Debit Instan </h4>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>Direct Debit BNI</b>
+                </v-btn>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>OneKlik</b>
+                </v-btn>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>Direct Debit Mandiri</b>
+                </v-btn>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>OCTO Cash by CIMB Niaga</b>
+                </v-btn>
+                    
+            </v-col>
+            <v-col cols="12" sm="6">
+                <h4 class="text-start"> Transfer Virtual Account </h4>
+                <v-btn class="mb-4" 
+                    block color="#FFC555"  depressed dark rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>BNI Virtual Account</b>
+                </v-btn>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>BCA Virtual Account</b>
+                </v-btn>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>BRIVA</b>
+                </v-btn>
+                <v-btn class="mb-4"
+                    block color="#FFC555" outlined rounded x-large>
+                    <img class="mr-8" src="../assets/bni.png">
+
+                    <b>Mandiri Virtual Account</b>
+                </v-btn>
+            </v-col>
+        </v-row>
+        <v-row>
+            <hr class="solid">
+            <v-col cols="12" sm="6" class="text-start">
+                <h4>Total Bayar</h4>
+                <h4><b>Rp.1.750.000</b></h4>
+            </v-col>
+            <v-col cols="12" sm="6" class="text-end">
+                <v-btn class=""
+                    color="#FFC555" dark depressed x-large>
+                    <b>Bayar dan Request</b>
+                </v-btn>
+            </v-col>
         </v-row>
       </v-container>
     </v-main>
@@ -74,6 +142,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color: #F9FAFB;
+}
+hr.solid {
+  border-top: 3px solid #000000;
 }
 p.xsmall{
   font-size: 10px !important;

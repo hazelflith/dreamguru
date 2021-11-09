@@ -189,9 +189,6 @@
             </v-card>
           </template>
         </v-dialog>
-
-        
-
           </v-col>
           <v-col cols="12" sm="2" class="text-start">
             <v-card max-width="170" class="cards">
