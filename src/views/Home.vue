@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <v-app-bar app light class="pl-7" height="80" id="navbar" flat>
+    <v-app-bar app light class="pl-xs-0 pl-7" height="80" id="navbar" flat>
       <a class="navbar-brand" href="/">
         <img src="../assets/Dreamguru.png" width="136" height="28" alt="">
       </a>
@@ -224,7 +224,7 @@
               <br>
               <h4>Bersama DreamGuru, kamu bisa nemuin guru yang satu pemikiran dan ga ngebosenin lho, 
                 Kok bisa? Makanya yuk <b>cobain daftar sekarang juga!</b> </h4>
-              <v-btn class="my-5 px-7" color="#FDC356" depressed rounded dark>Masuk</v-btn>
+              <v-btn class="my-xs-0 px-xs-2 my-5 px-7" color="#FDC356" depressed rounded dark>Masuk</v-btn>
             </div>
           </div>
         </div>
@@ -238,11 +238,11 @@
           </div>
           <div class="flex-row d-flex justify-content-center">
             <div class ="col-md-3 container-hero-2">
-              <div class="row container-pengajar">
+              <div class="row container-pengajar ">
                 <div class="col-sm-4 container-photo-1">
                     <div id="avatar1"></div>
                 </div>
-                <div class="col-sm-8 text-start container-text-pengajar">
+                <div class="col-sm-8 text-start container-text-pengajar ">
                   <p><b>Budi Santoso</b></p>
                   <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</p>
                 </div>
@@ -473,5 +473,29 @@ border-radius: 2px!important;
 #navbar{
   background-color: #F9FAFB;
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.06));
+}
+@media screen and (max-width: 425px) {
+  h1{
+    font-size: 18px !important;
+  }
+  h4{
+    font-size: 11px !important;
+  }
+  .hero-1-content{
+  text-align: start;
+  padding-bottom: 0px !important;
+  padding-left: 30px !important;
+  padding-right: 160px !important;
+  padding-top: 100px !important;
+  margin-top: 24px !important;
+  margin-left: 12px;
+}
+.container-fluid.hero-1{
+  background-image: url("../assets/Frame 2.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right bottom;
+  overflow: hidden;
+}
 }
 </style>

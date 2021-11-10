@@ -68,6 +68,9 @@
                     <v-card-text style="padding-bottom:0px;">
                   <v-container> 
                     <v-row>
+                      <div class="form-title">
+                        <h3 style="font-weight: 600;">Detail Guru</h3>
+                      </div>
                       <v-col cols="12" sm="6" class="text-end" no-gutters style="padding-right:0px;">
                         <v-avatar color="#E6696A" class="ma-3 cards-avatar">
                         <img src="../assets/budi.png" alt="Budi">
@@ -75,62 +78,33 @@
                       </v-col>
                       <v-col cols="12" sm="6" class="text-start" style="padding-left:0px;" no-gutters>
                         <p class="mt-3 mb-0"><b>Budi Santoso</b></p>
-                        <p class="small mb-0">Matematika</p>
-                        <v-rating class=""
-                          background-color="grey lighten-1"
-                          color="warning"
-                          hover
-                          length="5"
-                          readonly
-                          dense
-                          half-increments
-                          size="18"
-                          value= "5"
-                        ></v-rating>
-                        <p class="mb-0"><b>Rp. 350.000 / session</b></p>
-                        <img class="ml-0" src="../assets/prudent.png"> <img class="ml-1" src="../assets/humble.png"> <v-spacer></v-spacer> 
-                        <img class="" src="../assets/focused.png">
-                      </v-col>
-                    </v-row>
-                    <v-row> 
-                      <v-col cols="12" sm="6" class="text-end" no-gutters style="padding: 6px;">
-                        <img class="" src="../assets/graph.png">
-                      </v-col>
-                      <v-col cols="12" sm="6" class="text-start" style="padding-left:0px; padding-right:0px;" no-gutters>
-                        <h6><b>Terbuka & Ramah </b></h6>
-                        <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est nibh in pulvinar sit ornare et in eget. Consequat mi vitae amet aliquam mauris eu. </p>
+                        <p class="small mb-0">Budi@gmail.com</p>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-date-picker
-                        v-model="dates"
-                        multiple
-                        full-width
-                        color="#FFC555"
-                        style="padding:0px;"
-                      ></v-date-picker>
-                      <v-time-picker
-                        format="ampm"
-                        full-width
-                        color="#FFC555"
-                      ></v-time-picker>
-                      <v-col cols="12" sm="6" class="text-start" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
-                        <h6><b>Total Biaya</b></h6>
+                      <h6 class="text-start">Detail Berkas : </h6>
+                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png">
                       </v-col>
-                      <v-col cols="12" sm="6" class="text-end" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
-                        <h6><b>Rp. 1.750.000</b></h6>
+                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png">
+                      </v-col>
+                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png">
+                      </v-col>
+                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png">
                       </v-col>
                     </v-row>
                   </v-container>
                 </v-card-text> 
-                <v-card-actions class="pb-8 px-5">
+                <v-card-actions class="mt-6 pb-8 px-5">
                   <v-btn
                     color="#FDC356" depressed rounded dark block
                     @click="guru.value = false"
-                    href="#/payment"
                     
                   >
-                    Request
+                    Approve Guru
                   </v-btn>
                 </v-card-actions>
             </v-card>
