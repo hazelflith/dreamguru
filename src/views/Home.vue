@@ -1,21 +1,111 @@
 <template>
   <v-app id="app">
     <v-app-bar app light class="pl-7" height="80" id="navbar" flat>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="../assets/Dreamguru.png" width="136" height="28" alt="">
       </a>
       <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
         <v-btn class="mr-5 px-7" color="#FDC356" rounded light outlined>Untuk Guru</v-btn>
-        <v-btn class="mr-5 px-7" color="#FDC356" rounded light outlined>Daftar</v-btn>
+        
+        <!-- Register button -->
+        <v-dialog persistent max-width="600">
 
+        <template v-slot:activator="{ on, register }">
+          <v-btn
+            class="mr-5 px-7" color="#FDC356" depressed rounded dark outlined
+            v-bind="register"
+            v-on="on"
+          >Daftar</v-btn>
+        </template>
+        <template v-slot:default="register">
+          <v-card class="bg">
+            <div class="form-title">
+              <img src="../assets/Dreamguru.png" width="184" height="38" alt="">
+              <br><br><br>
+              <h3 style="font-weight: 600;">Masuk</h3>
+            </div>
+            
+            <v-card-text>
+          <v-container class="px-10">
+            <v-row no-gutters>
+              <v-col cols="12">
+                <p class="text-left font-weight-bold">Email</p>
+                <v-text-field
+                  solo
+                  clearable
+                  label="john.doe@gmail.com"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <p class="text-left font-weight-bold">Kata Sandi</p>
+                <v-text-field
+                  v-model="password"
+                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                  :rules="[rules.required, rules.min]"
+                  :type="show1 ? 'text' : 'password'"
+                  name="input-10-1"
+                  label="Masukkan Kata Sandi"
+                  hint="At least 8 characters"
+                  counter
+                  @click:append="show1 = !show1"
+                  solo
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <p class="text-left font-weight-bold">Ulangi Kata Sandi</p>
+                <v-text-field
+                  v-model="password"
+                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                  :rules="[rules.required, rules.min]"
+                  :type="show1 ? 'text' : 'password'"
+                  name="input-10-1"
+                  label="Tulis Ulang Kata Sandi"
+                  hint="At least 8 characters"
+                  counter
+                  @click:append="show1 = !show1"
+                  solo
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions class="px-16">
+          <v-btn x-large
+            color="#FDC356" depressed rounded dark block
+            @click="register.value = false"
+            href="#/cariguru"
+          >
+            Daftar
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions class="px-16 pb-6">
+          <v-btn x-large class="btn-google"
+            color="#FFFFFF" block depressed
+            @click="register.value = false"
+            href="#/cariguru"
+          >
+          <div class="left">
+                <img width="20px" style="margin-right:20px" alt="Google sign-in" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            </div>
+            Daftar dengan Google
+          </v-btn>
+          
+        </v-card-actions>
+        <p class="pb-16 mb-0">Sudah Punya Akun? 
+          <v-btn class="pa-0" color="#FDC356" plain text>Masuk Disini</v-btn> </p>
+          </v-card>
+        </template>
+      </v-dialog>
         <!-- login button -->
         <v-dialog persistent max-width="600">
 
-        <template v-slot:activator="{ on, attrs }">
+        <template v-slot:activator="{ on, login }">
           <v-btn
             class="px-7" color="#FDC356" depressed rounded dark
-            v-bind="attrs"
+            v-bind="login"
             v-on="on"
           >Masuk</v-btn>
         </template>
@@ -40,7 +130,7 @@
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
-                <p class="text-left font-weight-bold">Password</p>
+                <p class="text-left font-weight-bold">Kata Sandi</p>
                 <v-text-field
                   v-model="password"
                   :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -65,6 +155,17 @@
           >
             Masuk
           </v-btn>
+          
+        </v-card-actions>
+        <v-card-actions class="px-16">
+          <v-btn x-large
+            color="#FDC356" depressed rounded dark block
+            @click="dialog.value = false"
+            href="#/admin"
+          >
+            Masuk Admin
+          </v-btn>
+          
         </v-card-actions>
         <v-card-actions class="px-16 pb-6">
           <v-btn x-large class="btn-google"

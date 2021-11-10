@@ -12,15 +12,14 @@
           <v-col cols="12" sm="1" no-gutters class="text-end">
             <v-avatar>
                 <img
-                src="../assets/avatar.png"
-                alt="John"
+                src="../assets/admin.png"
                 size="46"
                 >
             </v-avatar>
           </v-col>
           <v-col cols="12" sm="1" no-gutters class="text-start">
-            <p class="mt-1 mb-0 ml-2"><b>Robert P.</b></p>
-            <p class="xsmall mb-0 ml-2">Murid</p>
+            <p class="mt-1 mb-0 ml-2"><b>Akmal D.</b></p>
+            <p class="xsmall mb-0 ml-2">Admin</p>
           </v-col>
         </v-row>
       </v-container>
@@ -40,58 +39,7 @@
     <v-main>
       <v-container>
         <v-row>
-          <h1 class="text-start hero-1">Cari <span style="color:#FFC555; font-weight:700;">Guru </span> Yang Pas Untukmu !</h1>
-          <v-col cols="12">
-            <v-text-field
-            rounded
-            hint="Coba, Cari guru matematika!"
-            label="Cari Guru"
-            outlined
-            clearable
-          ></v-text-field>
-          </v-col>
-          <v-row>
-            <v-col cols="12" sm="1" class="text-start">
-              <h5 class="mt-4"><b>Filter By : </b></h5>
-            </v-col>
-            <v-col cols="12" sm="2" class="text-start">
-              <v-select
-              class="filter"
-              rounded
-              :items="BidangStudi"
-              label="Bidang Studi"
-              solo
-              ></v-select>
-            </v-col>
-            <v-col cols="12" sm="2" class="text-start">
-              <v-select
-              class="filter"
-              rounded
-              :items="harga"
-              label="Harga"
-              solo
-              ></v-select>
-            </v-col>
-            <v-col cols="12" sm="2" class="text-start">
-              <v-select
-              class="filter"
-              rounded
-              :items="rating"
-              label="Rating"
-              solo
-              ></v-select>
-            </v-col>
-            <v-col cols="12" sm="2" class="text-start">
-              <v-select
-              class="filter"
-              rounded
-              :items="availability"
-              label="Availability"
-              solo
-              ></v-select>
-            </v-col>
-          </v-row>
-        <h1 class="text-start hero-2">Guru Terkait </h1>
+        <h1 class="text-start hero-2">Pending Guru Applications </h1>
         <v-row no-gutters> 
           <v-col cols="12" sm="2" class="text-start">
         <v-dialog max-width="428">
@@ -101,19 +49,18 @@
               <img src="../assets/budi.png" alt="Budi">
               </v-avatar>
             <p class="ml-3 mb-0"><b>Budi Santoso</b></p>
-            <p class="small ml-3 mb-0">Matematika</p>
-            <v-rating class="ml-3"
-              background-color="grey lighten-1"
-              color="warning"
-              hover
-              length="5"
-              readonly
-              dense
-              half-increments
-              size="18"
-              value= "5"
-            ></v-rating>
-            <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
+            <p class="small ml-3 mb-0">Budi@gmail.com</p>
+            <v-btn class="btn-detail" color="#FFC555" text> 
+              Cek Detail 
+              <v-icon
+                block
+                right
+                dark
+                color="#FFC555"
+                >
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
             </v-card>
           </template>
               <template v-slot:default="guru">
@@ -196,19 +143,18 @@
               <img src="../assets/andi.png" alt="Andi">
               </v-avatar>
             <p class="ml-3 mb-0"><b>Andi Wijaya</b></p>
-            <p class="small ml-3 mb-0">Matematika</p>
-            <v-rating class="ml-3"
-              background-color="grey lighten-1"
-              color="warning"
-              hover
-              length="5"
-              readonly
-              dense
-              half-increments
-              size="18"
-              value= "5"
-            ></v-rating>
-            <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
+            <p class="small ml-3 mb-0">Andi@gmail.com</p>
+            <v-btn class="btn-detail" color="#FFC555" text> 
+              Cek Detail 
+              <v-icon
+                block
+                right
+                dark
+                color="#FFC555"
+                >
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
             </v-card>
           </v-col>
           <v-col cols="12" sm="2" class="text-start">
@@ -217,40 +163,18 @@
               <img src="../assets/susi.png" alt="Susi">
               </v-avatar>
             <p class="ml-3 mb-0"><b>Susi Susanti</b></p>
-            <p class="small ml-3 mb-0">Matematika</p>
-            <v-rating class="ml-3"
-              background-color="grey lighten-1"
-              color="warning"
-              hover
-              length="5"
-              readonly
-              dense
-              half-increments
-              size="18"
-              value= "5"
-            ></v-rating>
-            <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="2" class="text-start">
-            <v-card max-width="170" class="cards">
-              <v-avatar color="#E6696A" class="ma-3 cards-avatar">
-              <img src="../assets/budi.png" alt="Budi">
-              </v-avatar>
-            <p class="ml-3 mb-0"><b>Budi Santoso</b></p>
-            <p class="small ml-3 mb-0">Matematika</p>
-            <v-rating class="ml-3"
-              background-color="grey lighten-1"
-              color="warning"
-              hover
-              length="5"
-              readonly
-              dense
-              half-increments
-              size="18"
-              value= "5"
-            ></v-rating>
-            <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
+            <p class="small ml-3 mb-0">Susi@gmail.com</p>
+            <v-btn class="btn-detail" color="#FFC555" text> 
+              Cek Detail 
+              <v-icon
+                block
+                right
+                dark
+                color="#FFC555"
+                >
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
             </v-card>
           </v-col>
           <v-col cols="12" sm="2" class="text-start">
@@ -259,19 +183,18 @@
               <img src="../assets/andi.png" alt="Andi">
               </v-avatar>
             <p class="ml-3 mb-0"><b>Andi Wijaya</b></p>
-            <p class="small ml-3 mb-0">Matematika</p>
-            <v-rating class="ml-3"
-              background-color="grey lighten-1"
-              color="warning"
-              hover
-              length="5"
-              readonly
-              dense
-              half-increments
-              size="18"
-              value= "5"
-            ></v-rating>
-            <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
+            <p class="small ml-3 mb-0">Andi@gmail.com</p>
+            <v-btn class="btn-detail" color="#FFC555" text> 
+              Cek Detail 
+              <v-icon
+                block
+                right
+                dark
+                color="#FFC555"
+                >
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
             </v-card>
           </v-col>
           <v-col cols="12" sm="2" class="text-start">
@@ -280,21 +203,42 @@
               <img src="../assets/susi.png" alt="Susi">
               </v-avatar>
             <p class="ml-3 mb-0"><b>Susi Susanti</b></p>
-            <p class="small ml-3 mb-0">Matematika</p>
-            <v-rating class="ml-3"
-              background-color="grey lighten-1"
-              color="warning"
-              hover
-              length="5"
-              readonly
-              dense
-              half-increments
-              size="18"
-              value= "5"
-            ></v-rating>
-            <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
+            <p class="small ml-3 mb-0">Susi@gmail.com</p>
+            <v-btn class="btn-detail" color="#FFC555" text> 
+              Cek Detail 
+              <v-icon
+                block
+                right
+                dark
+                color="#FFC555"
+                >
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
             </v-card>
           </v-col>
+          <v-col cols="12" sm="2" class="text-start">
+            <v-card max-width="170" class="cards">
+              <v-avatar color="#FFC555" class="ma-3 cards-avatar">
+              <img src="../assets/andi.png" alt="Andi">
+              </v-avatar>
+            <p class="ml-3 mb-0"><b>Andi Wijaya</b></p>
+            <p class="small ml-3 mb-0">Andi@gmail.com</p>
+            <v-btn class="btn-detail" color="#FFC555" text> 
+              Cek Detail 
+              <v-icon
+                block
+                right
+                dark
+                color="#FFC555"
+                >
+                mdi-chevron-right
+              </v-icon>
+            </v-btn>
+            </v-card>
+          </v-col>
+          
+          
         </v-row>
         </v-row>
       </v-container>
@@ -472,5 +416,8 @@ border-radius: 2px!important;
 #navbar{
   background-color: #F9FAFB;
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.06));
+}
+.btn-detail{
+  margin-top:36px;
 }
 </style>

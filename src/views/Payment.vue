@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-app-bar app light class="pl-7" height="80" id="navbar" flat>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="../assets/Dreamguru.png" width="136" height="28" alt="">
       </a>
       <v-spacer></v-spacer>
@@ -104,10 +104,53 @@
                 <h4><b>Rp.1.750.000</b></h4>
             </v-col>
             <v-col cols="12" sm="6" class="text-end">
-                <v-btn class=""
+        <v-dialog max-width="428">
+          <template v-slot:activator="{ on, completion }">
+                <v-btn class="" v-bind="completion" v-on="on"
                     color="#FFC555" dark depressed x-large>
                     <b>Bayar dan Request</b>
                 </v-btn>
+          </template>
+          <template v-slot:default="completion">
+                  <v-card class="bg"> 
+                    <v-card-text style="padding-bottom:0px;">
+                  <v-container> 
+                    <v-row>
+                      <h4 class="mt-6">Arrangement Completed ! </h4>
+                      <v-col cols="12" class="text-center" no-gutters>
+                        <v-avatar color="#E6696A" class="ma-3 cards-avatar">
+                        <img src="../assets/budi.png" alt="Budi">
+                        </v-avatar>
+                      </v-col>
+                    </v-row>
+                      <v-row>
+                        <h5> <b>Budi Santoso</b> </h5>
+                        <h6> Matematika </h6>
+                        
+                        <p class="mb-2"><b>Your session will be held on :</b></p>
+                        <p class="mb-4"> 3 - 7 February 2021 at 3:00 - 6:00 PM via Zoom</p>
+                        
+                        <p><b>Zoom Link</b></p>
+                        <img class="btn-zoom mb-4" src="../assets/zoom.png" alt="Go To Zoom Meeting">
+                        
+                        <p class="mb-0"><b>Note :</b></p>
+                        <p>Once it's scheduled it can't be canceled.</p>
+                      </v-row>
+                  </v-container>
+                </v-card-text> 
+                <v-card-actions class="pb-8 px-5">
+                  <v-btn
+                    color="#FDC356" depressed rounded dark block
+                    @click="completion.value = false"
+                    href="#/cariguru"
+                    
+                  >
+                    Add to Google Calendar
+                  </v-btn>
+                </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
             </v-col>
         </v-row>
       </v-container>
@@ -302,5 +345,16 @@ border-radius: 2px!important;
 #navbar{
   background-color: #F9FAFB;
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.06));
+}
+.btn-zoom {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.cards-avatar{
+  width: 144px !important;
+  height: 139px !important;
+  border-radius: 15px !important;
 }
 </style>
