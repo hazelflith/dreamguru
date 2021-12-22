@@ -224,7 +224,7 @@
               <br>
               <h4>Bersama DreamGuru, kamu bisa nemuin guru yang satu pemikiran dan ga ngebosenin lho, 
                 Kok bisa? Makanya yuk <b>cobain daftar sekarang juga!</b> </h4>
-              <v-btn class="my-xs-0 px-xs-2 my-5 px-7" color="#FDC356" depressed rounded dark>Masuk</v-btn>
+              <v-btn v-bind="size" class="my-xs-2 px-xs-2 my-5 px-7" color="#FDC356" depressed rounded dark>Masuk</v-btn>
             </div>
           </div>
         </div>
@@ -233,38 +233,37 @@
           <div class="row">
             <div class ="col hero-2-content">
               <h1><b>Pengajar Terbaik Kami</b></h1>
-              <br>
             </div>
           </div>
-          <div class="flex-row d-flex justify-content-center">
-            <div class ="col-md-3 container-hero-2">
+          <div class="row justify-content-center">
+            <div class ="col-8 col-md-4 col-sm-6 col-lg-3 container-hero-2">
               <div class="row container-pengajar ">
-                <div class="col-sm-4 container-photo-1">
+                <div class="col-4 container-photo-1">
                     <div id="avatar1"></div>
                 </div>
-                <div class="col-sm-8 text-start container-text-pengajar ">
+                <div class="col-8 text-start container-text-pengajar ">
                   <p><b>Budi Santoso</b></p>
                   <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</p>
                 </div>
               </div>
             </div>
-            <div class ="col-md-3 container-hero-2">
+            <div class ="col-8 col-md-4 col-sm-6 col-lg-3 container-hero-2">
               <div class="row container-pengajar">
-                <div class="col-sm-4 container-photo-2">
+                <div class="col-4  container-photo-2">
                     <div id="avatar2"></div>
                 </div>
-                <div class="col-sm-8 text-start container-text-pengajar">
+                <div class="col-8 col-sm-8 text-start container-text-pengajar">
                   <p><b>Susi Susanti</b></p>
                   <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</p>
                 </div>
               </div>
             </div>
-            <div class ="col-md-3 container-hero-2">
+            <div class ="col-8 col-md-4 col-sm-6 col-lg-3 container-hero-2">
               <div class="row container-pengajar">
-                <div class="col-sm-4 container-photo-3">
+                <div class="col-4 container-photo-3">
                     <div id="avatar3"></div>
                 </div>
-                <div class="col-sm-8 text-start container-text-pengajar">
+                <div class="col-8 text-start container-text-pengajar">
                   <p><b>Andi Wijaya</b></p>
                   <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</p>
                 </div>
@@ -286,6 +285,12 @@ export default {
 
   components: {
   },
+  computed: {
+    size () {
+      const size = {xs:'x-small',sm:'small',lg:'large',xl:'x-large'}[this.$vuetify.breakpoint.name];
+      return size ? { [size]: true } : {}
+    }
+  },
 
   data: () => ({
         items: [
@@ -306,6 +311,7 @@ export default {
         components: {
             
         }
+        
       }),
 };
 </script>
@@ -351,7 +357,7 @@ h6{
 }
 .hero-1-content{
   text-align: start;
-  padding: 30px !important;
+  padding: 25px !important;
   padding-top: 100px !important;
   margin-left: 100px;
 }
@@ -370,7 +376,7 @@ border-radius: 2px!important;
 .container-fluid.hero-1{
   background-image: url("../assets/Frame 1.png");
   background-repeat: no-repeat;
-  background-size: initial;
+  background-size: contain;
   background-position: right bottom;
   overflow: hidden;
 }
@@ -474,28 +480,55 @@ border-radius: 2px!important;
   background-color: #F9FAFB;
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.06));
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1440px) {
+  h1{
+    font-size: 36px !important;
+  }
+  h4{
+    font-size: 18px !important;
+  }
+  p{
+  font-size: 14px !important;
+  margin:4px !important;
+}
+  .hero-1-content{
+    text-align: start;
+    padding: 25px !important;
+    padding-top: 40px !important;
+    margin-left: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
   h1{
     font-size: 18px !important;
   }
   h4{
     font-size: 11px !important;
   }
+  p{
+  font-size: 14px !important;
+  margin:4px !important;
+}
   .hero-1-content{
   text-align: start;
   padding-bottom: 0px !important;
   padding-left: 30px !important;
-  padding-right: 160px !important;
-  padding-top: 100px !important;
-  margin-top: 24px !important;
+  padding-right: 200px !important;
+  padding-top: 20px !important;
+  margin-top: 0px !important;
   margin-left: 12px;
 }
 .container-fluid.hero-1{
-  background-image: url("../assets/Frame 2.png");
+  background-image: url("../assets/Frame 2png.png");
   background-repeat: no-repeat;
-  background-size: auto;
-  background-position: right bottom;
+  background-size: cover;
+  background-position: right;
   overflow: hidden;
+}
+.container-hero-2{
+  margin : 15px;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
 }
 }
 </style>

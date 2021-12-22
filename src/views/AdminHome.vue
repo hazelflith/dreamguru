@@ -5,11 +5,11 @@
         <img src="../assets/Dreamguru.png" width="136" height="28" alt="">
       </a>
       <v-spacer></v-spacer>
-      <v-container class="">
-        <v-row no-gutters >
-          <v-col cols="12" sm="10">
+      <v-container class="d-none d-sm-block">
+        <v-row justify="end" no-gutters >
+          <v-col cols="12" md="6">
           </v-col>
-          <v-col cols="12" sm="1" no-gutters class="text-end">
+          <v-col cols="12" md="3" no-gutters class="text-end">
             <v-avatar>
                 <img
                 src="../assets/admin.png"
@@ -17,7 +17,7 @@
                 >
             </v-avatar>
           </v-col>
-          <v-col cols="12" sm="1" no-gutters class="text-start">
+          <v-col cols="12" md="2" no-gutters class="text-start">
             <p class="mt-1 mb-0 ml-2"><b>Akmal D.</b></p>
             <p class="xsmall mb-0 ml-2">Admin</p>
           </v-col>
@@ -41,7 +41,7 @@
         <v-row>
         <h1 class="text-start hero-2">Pending Guru Applications </h1>
         <v-row no-gutters> 
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="2" class="text-start card-list">
         <v-dialog max-width="428">
           <template v-slot:activator="{ on, guru }">
             <v-card max-width="170" class="cards" v-bind="guru" v-on="on">
@@ -71,29 +71,29 @@
                       <div class="form-title">
                         <h3 style="font-weight: 600;">Detail Guru</h3>
                       </div>
-                      <v-col cols="12" sm="6" class="text-end" no-gutters style="padding-right:0px;">
-                        <v-avatar color="#E6696A" class="ma-3 cards-avatar">
-                        <img src="../assets/budi.png" alt="Budi">
+                      <v-col cols="6" sm="6" class="text-end pl-0" no-gutters style="padding-right:0px;">
+                        <v-avatar color="#E6696A" class="img-fluid ma-3 cards-avatar">
+                        <img src="../assets/budi.png" alt="Budi" class="img-fluid">
                         </v-avatar>
                       </v-col>
-                      <v-col cols="12" sm="6" class="text-start" style="padding-left:0px;" no-gutters>
+                      <v-col cols="6" sm="6" class="text-start pl-2 pr-0" style="padding-left:0px;" no-gutters>
                         <p class="mt-3 mb-0"><b>Budi Santoso</b></p>
                         <p class="small mb-0">Budi@gmail.com</p>
                       </v-col>
                     </v-row>
                     <v-row>
                       <h6 class="text-start">Detail Berkas : </h6>
-                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
-                      <img src="../assets/berkas.png">
+                      <v-col cols="3" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png" class="img-fluid">
                       </v-col>
-                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
-                      <img src="../assets/berkas.png">
+                      <v-col cols="3" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png" class="img-fluid">
                       </v-col>
-                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
-                      <img src="../assets/berkas.png">
+                      <v-col cols="3" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png" class="img-fluid">
                       </v-col>
-                      <v-col cols="12" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
-                      <img src="../assets/berkas.png">
+                      <v-col cols="3" sm="3" class="text-start" style="padding-left:8px;" no-gutters>
+                      <img src="../assets/berkas.png" class="img-fluid">
                       </v-col>
                     </v-row>
                   </v-container>
@@ -111,7 +111,7 @@
           </template>
         </v-dialog>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="2" class="text-start card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#FFC555" class="ma-3 cards-avatar">
               <img src="../assets/andi.png" alt="Andi">
@@ -131,7 +131,7 @@
             </v-btn>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="2" class="text-start card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#38BEA5" class="ma-3 cards-avatar">
               <img src="../assets/susi.png" alt="Susi">
@@ -151,7 +151,7 @@
             </v-btn>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="2" class="text-start card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#FFC555" class="ma-3 cards-avatar">
               <img src="../assets/andi.png" alt="Andi">
@@ -171,7 +171,7 @@
             </v-btn>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="2" class="text-start card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#38BEA5" class="ma-3 cards-avatar">
               <img src="../assets/susi.png" alt="Susi">
@@ -191,7 +191,7 @@
             </v-btn>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="2" class="text-start card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#FFC555" class="ma-3 cards-avatar">
               <img src="../assets/andi.png" alt="Andi">
@@ -286,6 +286,9 @@ h6{
 .cards{
   border-radius: 20px !important;
   margin-right: 0px !important;
+}
+.card-list{
+  margin-bottom: 14px !important;
 }
 .cards-avatar{
   width: 144px !important;

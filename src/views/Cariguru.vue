@@ -5,11 +5,11 @@
         <img src="../assets/Dreamguru.png" width="136" height="28" alt="">
       </a>
       <v-spacer></v-spacer>
-      <v-container class="">
-        <v-row no-gutters >
-          <v-col cols="12" sm="10">
+      <v-container class="d-none d-sm-block">
+        <v-row justify="end" no-gutters >
+          <v-col cols="12" md="6" >
           </v-col>
-          <v-col cols="12" sm="1" no-gutters class="text-end">
+          <v-col cols="12" md="3"  no-gutters class="text-end">
             <v-avatar>
                 <img
                 src="../assets/avatar.png"
@@ -18,7 +18,7 @@
                 >
             </v-avatar>
           </v-col>
-          <v-col cols="12" sm="1" no-gutters class="text-start">
+          <v-col cols="12" md="2" no-gutters class="text-start">
             <p class="mt-1 mb-0 ml-2"><b>Robert P.</b></p>
             <p class="xsmall mb-0 ml-2">Murid</p>
           </v-col>
@@ -92,8 +92,8 @@
             </v-col>
           </v-row>
         <h1 class="text-start hero-2">Guru Terkait </h1>
-        <v-row no-gutters> 
-          <v-col cols="12" sm="2" class="text-start">
+        <v-row justify="center" no-gutters> 
+          <v-col cols="6" sm="4" md="3" lg="2" class="text-start col-xs-6 card-list">
         <v-dialog max-width="428">
           <template v-slot:activator="{ on, guru }">
             <v-card max-width="170" class="cards" v-bind="guru" v-on="on">
@@ -121,12 +121,12 @@
                     <v-card-text style="padding-bottom:0px;">
                   <v-container> 
                     <v-row>
-                      <v-col cols="12" sm="6" class="text-end" no-gutters style="padding-right:0px;">
+                      <v-col cols="6" sm="6" class="text-end pl-0" no-gutters>
                         <v-avatar color="#E6696A" class="ma-3 cards-avatar">
                         <img src="../assets/budi.png" alt="Budi">
                         </v-avatar>
                       </v-col>
-                      <v-col cols="12" sm="6" class="text-start" style="padding-left:0px;" no-gutters>
+                      <v-col cols="6" sm="6" class="text-start pl-2 pr-0" no-gutters>
                         <p class="mt-3 mb-0"><b>Budi Santoso</b></p>
                         <p class="small mb-0">Matematika</p>
                         <v-rating class=""
@@ -146,10 +146,10 @@
                       </v-col>
                     </v-row>
                     <v-row> 
-                      <v-col cols="12" sm="6" class="text-end" no-gutters style="padding: 6px;">
+                      <v-col cols="6" sm="6" class="text-end" no-gutters style="padding: 6px;">
                         <img class="" src="../assets/graph.png">
                       </v-col>
-                      <v-col cols="12" sm="6" class="text-start" style="padding-left:0px; padding-right:0px;" no-gutters>
+                      <v-col cols="6" sm="6" class="text-start" style="padding-left:0px; padding-right:0px;" no-gutters>
                         <h6><b>Terbuka & Ramah </b></h6>
                         <p class="xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est nibh in pulvinar sit ornare et in eget. Consequat mi vitae amet aliquam mauris eu. </p>
                       </v-col>
@@ -167,10 +167,10 @@
                         full-width
                         color="#FFC555"
                       ></v-time-picker>
-                      <v-col cols="12" sm="6" class="text-start" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
+                      <v-col cols="6" sm="6" class="text-start" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
                         <h6><b>Total Biaya</b></h6>
                       </v-col>
-                      <v-col cols="12" sm="6" class="text-end" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
+                      <v-col cols="6" sm="6" class="text-end" style="margin-top:16px; margin-bottom:0px; padding-left:0px; padding-right:0px;" no-gutters>
                         <h6><b>Rp. 1.750.000</b></h6>
                       </v-col>
                     </v-row>
@@ -190,8 +190,8 @@
           </template>
         </v-dialog>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
-            <v-card max-width="170" class="cards">
+          <v-col cols="6" sm="4" md="3" lg="2" class="text-start col-xs-6 card-list">
+            <v-card max-width="170" class="cards mr-0">
               <v-avatar color="#FFC555" class="ma-3 cards-avatar">
               <img src="../assets/andi.png" alt="Andi">
               </v-avatar>
@@ -211,7 +211,7 @@
             <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="4" md="3" lg="2" class="text-start col-xs-6 card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#38BEA5" class="ma-3 cards-avatar">
               <img src="../assets/susi.png" alt="Susi">
@@ -232,7 +232,7 @@
             <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="4" md="3" lg="2" class="text-start col-xs-6 card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#E6696A" class="ma-3 cards-avatar">
               <img src="../assets/budi.png" alt="Budi">
@@ -253,7 +253,7 @@
             <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="4" md="3" lg="2" class="text-start col-xs-6 card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#FFC555" class="ma-3 cards-avatar">
               <img src="../assets/andi.png" alt="Andi">
@@ -274,7 +274,7 @@
             <p class="ml-3 pb-5"><b>Rp. 350.000 / session</b></p>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="2" class="text-start">
+          <v-col cols="6" sm="4" md="3" lg="2" class="text-start col-xs-6 card-list">
             <v-card max-width="170" class="cards">
               <v-avatar color="#38BEA5" class="ma-3 cards-avatar">
               <img src="../assets/susi.png" alt="Susi">
@@ -473,4 +473,14 @@ border-radius: 2px!important;
   background-color: #F9FAFB;
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.06));
 }
+.card-list{
+  margin-bottom: 14px !important;
+}
+
+@media screen and (max-width: 600px) {
+  h1{
+    font-size: 36px !important;
+  }
+}
+
 </style>
