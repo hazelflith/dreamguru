@@ -13,7 +13,7 @@
 
         <template v-slot:activator="{ on, register }">
           <v-btn
-            class="mr-5 px-7" color="#FDC356" depressed rounded dark outlined
+            class="px-md-7 px-lg-7 mr-5 px-3" color="#FDC356" depressed rounded dark outlined
             v-bind="register"
             v-on="on"
           >Daftar</v-btn>
@@ -23,12 +23,30 @@
             <div class="form-title">
               <img src="../assets/Dreamguru.png" width="184" height="38" alt="">
               <br><br><br>
-              <h3 style="font-weight: 600;">Masuk</h3>
+              <h3 style="font-weight: 600;">Daftar</h3>
             </div>
             
             <v-card-text>
-          <v-container class="px-10">
-            <v-row no-gutters>
+          <v-container class="px-md-10 px-lg-10 px-3">
+            <v-row>
+              <v-col cols="6">
+                <p class="text-left font-weight-bold">Nama Depan</p>
+                <v-text-field
+                  solo
+                  clearable
+                  label="John"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="6">
+                <p class="text-left font-weight-bold">Nama Belakang</p>
+                <v-text-field
+                  solo
+                  clearable
+                  label="Doe"
+                  required
+                ></v-text-field>
+              </v-col>
               <v-col cols="12">
                 <p class="text-left font-weight-bold">Email</p>
                 <v-text-field
@@ -71,7 +89,7 @@
             </v-row>
           </v-container>
         </v-card-text>
-        <v-card-actions class="px-16">
+        <v-card-actions class="px-md-16 px-lg-16 px-6">
           <v-btn x-large
             color="#FDC356" depressed rounded dark block
             @click="register.value = false"
@@ -80,7 +98,7 @@
             Daftar
           </v-btn>
         </v-card-actions>
-        <v-card-actions class="px-16 pb-6">
+        <v-card-actions class="px-md-16 px-lg-16 px-6 pb-6">
           <v-btn x-large class="btn-google"
             color="#FFFFFF" block depressed
             @click="register.value = false"
@@ -118,7 +136,7 @@
             </div>
             
             <v-card-text>
-          <v-container class="px-10">
+          <v-container class="px-md-10 px-lg-10 px-3">
             <v-row no-gutters>
               <v-col cols="12">
                 <p class="text-left font-weight-bold">Email atau Username</p>
@@ -147,7 +165,7 @@
             </v-row>
           </v-container>
         </v-card-text>
-        <v-card-actions class="px-16">
+        <v-card-actions class="px-md-16 px-lg-16 px-6">
           <v-btn x-large
             color="#FDC356" depressed rounded dark block
             @click="dialog.value = false"
@@ -157,7 +175,7 @@
           </v-btn>
           
         </v-card-actions>
-        <v-card-actions class="px-16">
+        <v-card-actions class="px-md-16 px-lg-16 px-6">
           <v-btn x-large
             color="#FDC356" depressed rounded dark block
             @click="dialog.value = false"
@@ -167,7 +185,7 @@
           </v-btn>
           
         </v-card-actions>
-        <v-card-actions class="px-16 pb-6">
+        <v-card-actions class="px-md-16 px-lg-16 px-6 pb-6">
           <v-btn x-large class="btn-google"
             color="#FFFFFF" block depressed
             @click="dialog.value = false"
@@ -200,13 +218,210 @@
                 <v-app-bar-nav-icon></v-app-bar-nav-icon>
               </v-btn>
             </template>
-
             <v-list>
-              <v-list-item
-                v-for="(item, i) in items"
-                :key="i"
-              >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item>
+                  <v-list-item-action>
+                    <!-- login button -->
+                      <v-dialog persistent max-width="600">
+                        <template v-slot:activator="{ on, login }">
+                          <v-list-item-title 
+                            v-bind="login"
+                            v-on="on"
+                          >Masuk</v-list-item-title>
+                        </template>
+                      <template v-slot:default="dialog">
+                        <v-card class="bg">
+                          <div class="form-title">
+                            <img src="../assets/Dreamguru.png" width="184" height="38" alt="">
+                            <br><br><br>
+                            <h3 style="font-weight: 600;">Masuk</h3>
+                          </div>
+                          
+                          <v-card-text>
+                        <v-container class="px-md-10 px-lg-10 px-3">
+                          <v-row no-gutters>
+                            <v-col cols="12">
+                              <p class="text-left font-weight-bold">Email atau Username</p>
+                              <v-text-field
+                                solo
+                                clearable
+                                label="john.doe@gmail.com"
+                                required
+                              ></v-text-field>
+                            </v-col>
+                            <v-col cols="12">
+                              <p class="text-left font-weight-bold">Kata Sandi</p>
+                              <v-text-field
+                                v-model="password"
+                                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                                :rules="[rules.required, rules.min]"
+                                :type="show1 ? 'text' : 'password'"
+                                name="input-10-1"
+                                label="Masukkan Kata Sandi"
+                                hint="At least 8 characters"
+                                counter
+                                @click:append="show1 = !show1"
+                                solo
+                              ></v-text-field>
+                            </v-col>
+                          </v-row>
+                        </v-container>
+                      </v-card-text>
+                      <v-card-actions class="px-md-16 px-lg-16 px-6">
+                        <v-btn x-large
+                          color="#FDC356" depressed rounded dark block
+                          @click="dialog.value = false"
+                          href="#/cariguru"
+                        >
+                          Masuk
+                        </v-btn>
+                        
+                      </v-card-actions>
+                      <v-card-actions class="px-md-16 px-lg-16 px-6">
+                        <v-btn x-large
+                          color="#FDC356" depressed rounded dark block
+                          @click="dialog.value = false"
+                          href="#/admin"
+                        >
+                          Masuk Admin
+                        </v-btn>
+                        
+                      </v-card-actions>
+                      <v-card-actions class="px-md-16 px-lg-16 px-6 pb-6">
+                        <v-btn x-large class="btn-google"
+                          color="#FFFFFF" block depressed
+                          @click="dialog.value = false"
+                          href="#/cariguru"
+                        >
+                        <div class="left">
+                              <img width="20px" style="margin-right:20px" alt="Google sign-in" 
+                                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                          </div>
+                          Masuk dengan Google
+                        </v-btn>
+                        
+                      </v-card-actions>
+                      <p class="pb-16 mb-0">Belum punya akun? 
+                        <v-btn class="pa-0" color="#FDC356" plain text>Daftar Sekarang</v-btn> </p>
+                        </v-card>
+                      </template>
+                    </v-dialog>
+                  </v-list-item-action>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-action>
+                  <!-- Register button -->
+        <v-dialog persistent max-width="600">
+
+        <template v-slot:activator="{ on, register }">
+          <v-list-item-title
+            v-bind="register"
+            v-on="on"
+          >Daftar</v-list-item-title>
+        </template>
+        <template v-slot:default="register">
+          <v-card class="bg">
+            <div class="form-title">
+              <img src="../assets/Dreamguru.png" width="184" height="38" alt="">
+              <br><br><br>
+              <h3 style="font-weight: 600;">Daftar</h3>
+            </div>
+            
+            <v-card-text>
+          <v-container class="px-md-10 px-lg-10 px-3">
+            <v-row>
+              <v-col cols="6">
+                <p class="text-left font-weight-bold">Nama Depan</p>
+                <v-text-field
+                  solo
+                  clearable
+                  label="John"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="6">
+                <p class="text-left font-weight-bold">Nama Belakang</p>
+                <v-text-field
+                  solo
+                  clearable
+                  label="Doe"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <p class="text-left font-weight-bold">Email</p>
+                <v-text-field
+                  solo
+                  clearable
+                  label="john.doe@gmail.com"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <p class="text-left font-weight-bold">Kata Sandi</p>
+                <v-text-field
+                  v-model="password"
+                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                  :rules="[rules.required, rules.min]"
+                  :type="show1 ? 'text' : 'password'"
+                  name="input-10-1"
+                  label="Masukkan Kata Sandi"
+                  hint="At least 8 characters"
+                  counter
+                  @click:append="show1 = !show1"
+                  solo
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <p class="text-left font-weight-bold">Ulangi Kata Sandi</p>
+                <v-text-field
+                  v-model="password"
+                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                  :rules="[rules.required, rules.min]"
+                  :type="show1 ? 'text' : 'password'"
+                  name="input-10-1"
+                  label="Tulis Ulang Kata Sandi"
+                  hint="At least 8 characters"
+                  counter
+                  @click:append="show1 = !show1"
+                  solo
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions class="px-md-16 px-lg-16 px-6">
+          <v-btn x-large
+            color="#FDC356" depressed rounded dark block
+            @click="register.value = false"
+            href="#/cariguru"
+          >
+            Daftar
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions class="px-md-16 px-lg-16 px-6 pb-6">
+          <v-btn x-large class="btn-google"
+            color="#FFFFFF" block depressed
+            @click="register.value = false"
+            href="#/cariguru"
+          >
+          <div class="left">
+                <img width="20px" style="margin-right:20px" alt="Google sign-in" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            </div>
+            Daftar dengan Google
+          </v-btn>
+          
+        </v-card-actions>
+        <p class="pb-16 mb-0">Sudah Punya Akun? 
+          <v-btn class="pa-0" color="#FDC356" plain text>Masuk Disini</v-btn> </p>
+          </v-card>
+        </template>
+      </v-dialog>
+                </v-list-item-action>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>Untuk Guru</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -224,14 +439,99 @@
               <br>
               <h4>Bersama DreamGuru, kamu bisa nemuin guru yang satu pemikiran dan ga ngebosenin lho, 
                 Kok bisa? Makanya yuk <b>cobain daftar sekarang juga!</b> </h4>
-              <v-btn v-bind="size" class="my-xs-2 px-xs-2 my-5 px-7" color="#FDC356" depressed rounded dark>Masuk</v-btn>
+                <!-- login button -->
+                <v-dialog persistent max-width="600">
+
+                <template v-slot:activator="{ on,}">
+                  <v-btn
+                    v-bind="size" class="my-xs-2 px-xs-2 my-5 px-7" color="#FDC356" depressed rounded dark
+                    v-on="on"
+                  >Masuk</v-btn>
+                </template>
+                <template v-slot:default="dialog">
+                  <v-card class="bg">
+                    <div class="form-title">
+                      <img src="../assets/Dreamguru.png" width="184" height="38" alt="">
+                      <br><br><br>
+                      <h3 style="font-weight: 600;">Masuk</h3>
+                    </div>
+                    
+                    <v-card-text>
+                  <v-container class="px-md-10 px-lg-10 px-3">
+                    <v-row no-gutters>
+                      <v-col cols="12">
+                        <p class="text-left font-weight-bold">Email atau Username</p>
+                        <v-text-field
+                          solo
+                          clearable
+                          label="john.doe@gmail.com"
+                          required
+                        ></v-text-field>
+                      </v-col>
+                      <v-col cols="12">
+                        <p class="text-left font-weight-bold">Kata Sandi</p>
+                        <v-text-field
+                          v-model="password"
+                          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                          :rules="[rules.required, rules.min]"
+                          :type="show1 ? 'text' : 'password'"
+                          name="input-10-1"
+                          label="Masukkan Kata Sandi"
+                          hint="At least 8 characters"
+                          counter
+                          @click:append="show1 = !show1"
+                          solo
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-card-text>
+                <v-card-actions class="px-md-16 px-lg-16 px-6">
+                  <v-btn x-large
+                    color="#FDC356" depressed rounded dark block
+                    @click="dialog.value = false"
+                    href="#/cariguru"
+                  >
+                    Masuk
+                  </v-btn>
+                  
+                </v-card-actions>
+                <v-card-actions class="px-md-16 px-lg-16 px-6">
+                  <v-btn x-large
+                    color="#FDC356" depressed rounded dark block
+                    @click="dialog.value = false"
+                    href="#/admin"
+                  >
+                    Masuk Admin
+                  </v-btn>
+                  
+                </v-card-actions>
+                <v-card-actions class="px-md-16 px-lg-16 px-6 pb-6">
+                  <v-btn x-large class="btn-google"
+                    color="#FFFFFF" block depressed
+                    @click="dialog.value = false"
+                    href="#/cariguru"
+                  >
+                  <div class="left">
+                        <img width="20px" style="margin-right:20px" alt="Google sign-in" 
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                    </div>
+                    Masuk dengan Google
+                  </v-btn>
+                  
+                </v-card-actions>
+                <p class="pb-16 mb-0">Belum punya akun? 
+                  <v-btn class="pa-0" color="#FDC356" plain text>Daftar Sekarang</v-btn> </p>
+                  </v-card>
+                </template>
+              </v-dialog>
             </div>
           </div>
         </div>
 
         <div class="container-fluid hero-2">
           <div class="row">
-            <div class ="col hero-2-content">
+            <div class ="col-12">
               <h1><b>Pengajar Terbaik Kami</b></h1>
             </div>
           </div>
@@ -271,6 +571,40 @@
             </div>
           </div>
         </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class ="col-12 mt-9">
+              <h1><b>Webinar Terbaru Dari Guru Terpilih</b></h1>
+              </div>
+            </div>
+            <div class="row hero-3 mb-7">
+              <div class ="col-12 col-md-3 col-lg-3">
+                <div id="webinar" class="container-webinar">
+                </div>
+                <h3 class="text-start mt-7"><b>Webinar ABC</b></h3>
+                <h6 class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</h6>
+
+              </div>
+              <div class ="col-12 col-md-3 col-lg-3">
+                <div id="webinar" class="container-webinar">
+                </div>
+                <h3 class="text-start mt-7"><b>Webinar ABC</b></h3>
+                <h6 class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</h6>
+              </div>
+              <div class ="col-12 col-md-3 col-lg-3">
+                <div id="webinar" class="container-webinar">
+                </div>
+                <h3 class="text-start mt-7"><b>Webinar ABC</b></h3>
+                <h6 class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</h6>
+              </div>
+              <div class ="col-12 col-md-3 col-lg-3">
+                <div id="webinar" class="container-webinar">
+                </div>
+                <h3 class="text-start mt-7"><b>Webinar ABC</b></h3>
+                <h6 class="text-justify" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet malesuada sagittis nam feugiat. Ut diam elit et volutpat adipiscing mi egestas. Cras volutpat.</h6>
+              </div>
+            </div>
+          </div>
       </main>
     </div>
 
@@ -351,6 +685,7 @@ h5{
 h6{
   font-size: 16px !important;
 }
+
 .form-title{
   padding: 40px;
   padding-bottom: 20px;
@@ -382,6 +717,14 @@ border-radius: 2px!important;
 }
 .container-fluid.hero-2{
   margin-top: 50px;
+}
+
+.container-fluid.hero-3{
+  margin-top: 50px;
+}
+.hero-3{
+  margin-left: 50px !important;
+  margin-right: 50px !important;
 }
 .btn.btn-outline-primary{
   border-radius: 18px;
@@ -417,6 +760,13 @@ border-radius: 2px!important;
 .container-pengajar{
   height: 146px;
 
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+}
+.container-webinar{
+  height: 250px !important;
+  margin-top: 50px !important;
   background: #FFFFFF;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.06);
   border-radius: 20px;
@@ -476,6 +826,16 @@ border-radius: 2px!important;
     background-position: bottom center;
 }
 
+#webinar {
+    background-image: url('../assets/webinar.png');
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 20px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
 #navbar{
   background-color: #F9FAFB;
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.06));
@@ -484,11 +844,17 @@ border-radius: 2px!important;
   h1{
     font-size: 36px !important;
   }
+  h3{
+  font-size: 22px !important;
+}
   h4{
     font-size: 18px !important;
   }
-  p{
+  h6{
   font-size: 14px !important;
+}
+  p{
+  font-size: 12px !important;
   margin:4px !important;
 }
   .hero-1-content{
@@ -505,9 +871,15 @@ border-radius: 2px!important;
   h4{
     font-size: 11px !important;
   }
+  h3{
+  font-size: 14px !important;
+}
   p{
   font-size: 14px !important;
   margin:4px !important;
+}
+h6{
+  font-size: 11px !important;
 }
   .hero-1-content{
   text-align: start;
@@ -529,6 +901,17 @@ border-radius: 2px!important;
   margin : 15px;
   margin-top: 15px !important;
   margin-bottom: 15px !important;
+}
+.hero-3{
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+.container-webinar{
+  height: 200px !important;
+  margin-top: 20px !important;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
 }
 }
 </style>

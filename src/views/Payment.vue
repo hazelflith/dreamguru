@@ -5,11 +5,11 @@
         <img src="../assets/Dreamguru.png" width="136" height="28" alt="">
       </a>
       <v-spacer></v-spacer>
-      <v-container class="">
-        <v-row no-gutters >
-          <v-col cols="12" sm="10">
+      <v-container  class="d-none d-sm-block">
+        <v-row justify="end" no-gutters >
+          <v-col cols="12" md="6">
           </v-col>
-          <v-col cols="12" sm="1" no-gutters class="text-end">
+          <v-col cols="12" md="3" no-gutters class="text-end">
             <v-avatar>
                 <img
                 src="../assets/avatar.png"
@@ -18,7 +18,7 @@
                 >
             </v-avatar>
           </v-col>
-          <v-col cols="12" sm="1" no-gutters class="text-start">
+          <v-col cols="12" md="2" no-gutters class="text-start">
             <p class="mt-1 mb-0 ml-2"><b>Robert P.</b></p>
             <p class="xsmall mb-0 ml-2">Murid</p>
           </v-col>
@@ -72,7 +72,7 @@
             <v-col cols="12" sm="6">
                 <h4 class="text-start"> Transfer Virtual Account </h4>
                 <v-btn class="mb-4" 
-                    block color="#FFC555"  depressed dark rounded x-large>
+                    block color="#FFC555"  outlined rounded x-large>
                     <img class="mr-8" src="../assets/bni.png">
 
                     <b>BNI Virtual Account</b>
@@ -99,16 +99,16 @@
         </v-row>
         <v-row>
             <hr class="solid">
-            <v-col cols="12" sm="6" class="text-start">
+            <v-col cols="6" sm="6" class="text-start">
                 <h4>Total Bayar</h4>
                 <h4><b>Rp.1.750.000</b></h4>
             </v-col>
-            <v-col cols="12" sm="6" class="text-end">
+            <v-col cols="6" sm="6" class="text-end">
         <v-dialog max-width="428">
-          <template v-slot:activator="{ on, completion }">
-                <v-btn class="" v-bind="completion" v-on="on"
-                    color="#FFC555" dark depressed x-large>
-                    <b>Bayar dan Request</b>
+          <template v-slot:activator="{ on,}">
+                <v-btn class="" v-bind="size" v-on="on"
+                    color="#FFC555" dark depressed>
+                    <b>Bayar & Request</b>
                 </v-btn>
           </template>
           <template v-slot:default="completion">
@@ -128,7 +128,7 @@
                         <h6> Matematika </h6>
                         
                         <p class="mb-2"><b>Your session will be held on :</b></p>
-                        <p class="mb-4"> 3 - 7 February 2021 at 3:00 - 6:00 PM via Zoom</p>
+                        <p class="mb-4"> 3 - 7 February 2021 at <b>3:00 - 6:00 PM</b> via Zoom</p>
                         
                         <p><b>Zoom Link</b></p>
                         <img class="btn-zoom mb-4" src="../assets/zoom.png" alt="Go To Zoom Meeting">
@@ -165,7 +165,12 @@ export default {
 
   components: {
   },
-
+  computed: {
+    size () {
+      const size = {xs:'large',sm:'large',md:"x-large",lg:'x-large',xl:'x-large'}[this.$vuetify.breakpoint.name];
+      return size ? { [size]: true } : {}
+    }
+  },
   data: () => ({
         
         components: {
@@ -356,5 +361,14 @@ border-radius: 2px!important;
   width: 144px !important;
   height: 139px !important;
   border-radius: 15px !important;
+}
+@media screen and (max-width: 600px) {
+  h4{
+    font-size: 18px !important;
+  }
+  .hero-1{
+  margin-top: 40px !important;
+  margin-bottom: 44px !important;
+}
 }
 </style>

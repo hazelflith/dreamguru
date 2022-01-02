@@ -16,7 +16,7 @@
                 size="46"
                 >
             </v-avatar>
-          </v-col>
+          </v-col>-
           <v-col cols="12" md="2" no-gutters class="text-start">
             <p class="mt-1 mb-0 ml-2"><b>Akmal D.</b></p>
             <p class="xsmall mb-0 ml-2">Admin</p>
